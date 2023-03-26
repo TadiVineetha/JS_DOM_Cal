@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+</head>
+<body>
+<p id="demo">Mouse over</p>
+<button id="btn">Click!</button>  
+<script>
+    let ele = document.getElementById("btn");        
+    ele.onmouseover = function() {
+    this.innerHTML = "Mouse is over the button";
+  };
+   let e = document.getElementById("btn");        
+   let btn1= ele.innerHTML;
+   e.onmouseout = function() {
+   this.innerHTML = btn1;
+   };
+  </script> 
+<p id="pText"></p>
+<input type="text" id="b1"/>
+<button onclick="changeTxt();">Insert</button>
+
+<ul id="list">
+  <li>JS</li>
+  <li>React</li>
+  <li>Node</li>
+</ul>
+<script type="text/javascript">
+    document.getElementById("demo").onmouseover = function() {mouseOver()};
+    document.getElementById("demo").onmouseout = function() {mouseOut()};
+    function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+
+    function changeText(text)
+        {
+            var display = document.getElementById('text-display');
+            display.innerHTML = "";
+            display.innerHTML = text;
+        }
+    function changeback(text)
+        {
+            var display = document.getElementById('text-display');
+            display.innerHTML = "";
+            display.innerHTML = text;
+        }
+         const btn=document.getElementById('btn');
+        btn.addEventListener("changeText",(event)=>{
+          event.target.innerHTML='changeText';
+        })
+        var el_down = document.getElementById("pText");
+        var inputF = document.getElementById("b1");
+
+        function changeTxt() {
+            el_down.innerHTML = inputF.value;
+        }
+        const list = document.getElementById("list");
+        list.addEventListener("mouseover", (event) => {
+          event.target.style.color = " orange ";
+          event.target.style.fontWeight='bold';
+        });
+        list.addEventListener("mouseout", (event) => {
+          event.target.style.color = "";
+        event.target.style.fontWeight='';
+        });
+
+</script>
+</body>
+</html>
